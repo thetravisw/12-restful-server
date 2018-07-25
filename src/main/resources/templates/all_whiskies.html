@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scotch is good.</title>
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+</head>
+<body>
+<h1>All Whiskies</h1>
+<p>
+    <a href="/whiskies/new">
+        Add a new bottle.
+    </a>
+</p>
+<img src="\js\RonBurgundy.gif" />
+<ul>
+    <li th:each="whisky : ${whiskies}">
+        <p>
+            <span th:text="${whisky.name}" /> is rated:
+            <span th:text="${whisky.rating}" /> out of 10 on the Travis scale.
+            <a th:href="'/whiskies/' + ${whisky.id} + '/edit'">
+                edit
+            </a>
+        </p>
+    </li>
+</ul>
+</body>
+</html>

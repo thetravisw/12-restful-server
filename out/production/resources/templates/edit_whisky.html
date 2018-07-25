@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit a whisky</title>
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+</head>
+<body>
+<h1>Edit a Whisky</h1>
+<form id="edit-form" th:action="'/api/whiskies/' + ${id}" method="PUT">
+    Name: <input type="text" name="name" th:value="${name}"/>
+    Rating: <input type="number" name="rating" th:value="${rating}"/>
+    <button id="delete_whisky">delete</button>
+    <input type="submit" value="save"/>
+</form>
+
+<script src="\js\form.js"></script>
+
+
+</body>
+</html>
+
